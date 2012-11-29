@@ -1,4 +1,14 @@
 #include <unp.h>
+#include <signal.h>
+#include <sys/wait.h>
+void sig_child(int signo)
+{
+    pid_t pid;
+    int stat;
+    while((pid = waitpid(-1, &stat, WNOHANG)) > 0)
+        printf("process %d terminated", pid);
+    return;
+}
 int main(int argc, char** argv)
 {
 	int listenfd, connfd;
@@ -29,6 +39,8 @@ int main(int argc, char** argv)
        return 1;
    }
    printf("Listening on port 8888\n");
+
+   signal(SIGCHLD, sig_child);
 
     while(1)
     {
