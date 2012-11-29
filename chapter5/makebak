@@ -1,0 +1,2 @@
+tcpserver01.o: src/server/tcpserver01.c include/unp.h
+	gcc -c -I./include src/server/tcpserver01.c
