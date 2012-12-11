@@ -8,8 +8,8 @@
 #include <stdio.h>
 #include <arpa/inet.h>
 
-const int SERV_PORT = 8888;
-const int BUFSIZE = 1024;
+extern const int SERV_PORT;
+extern const int BUFSIZE;
 void str_cli(FILE* fp, int sockfd);
 void str_echo(int sockfd);
 
