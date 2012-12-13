@@ -8,11 +8,11 @@
 #include <stdio.h>
 #include <arpa/inet.h>
 
-extern const int SERV_PORT;
-extern const int BUFSIZE;
+#define SERV_PORT (8888)
+#define BUFSIZE  (1024)
 void str_cli(FILE* fp, int sockfd);
 void str_echo(int sockfd);
-
+#define max(a,b) ((a)>(b) ? (a):(b))
 
 
 

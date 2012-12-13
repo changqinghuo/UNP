@@ -44,6 +44,7 @@ int main(int argc, char** argv)
                 if(client[i] < 0)
                 {
                     client[i] = connfd;
+                    printf("new client arrives\n");
                     break;
                 }
             
@@ -77,8 +78,10 @@ int main(int argc, char** argv)
                 }
                 else
                 {
+                    printf("Got data from client: %s\n", buf);
                     write(sockfd, buf, n);
                 }
+                
                 if (--nready <=0)
                     break;
             }

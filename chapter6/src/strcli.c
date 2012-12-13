@@ -1,7 +1,5 @@
 #include "math.h"
 #include "unp.h"
-const int SERV_PORT = 8888;
-const int BUFSIZE = 1024;
 void str_cli(FILE* fp, int sockfd)
 {
 
